@@ -16,7 +16,7 @@
 # if rating > 4.7:
 #     print('Фильм крут')
 # else:
-#     print('Так себе киношечка')
+#     print('Так себе киношечка')1
 #
 # # Используем тернарный оператор
 # result = 'Фильм крут' if rating > 4.7 else 'Так себе киношечка'
@@ -24,16 +24,17 @@
 #
 # print('Проверка окончена')
 # #-------------------------------------------------
-x = -1
-y = -4
-cuoter = 0
-
-if x and y > 0:
-    cuoter = 1
-elif x < 0 and y > 0:
-    cuoter = 2
-elif x < 0 and y < 0:
-    cuoter = 3
-elif x > 0 and y < 0:
-    cuoter = 4
-print('точка в четверти', cuoter)
+# x = -1
+# y = -4
+# cuoter = 0
+#
+# if x and y > 0:
+#     cuoter = 1
+# elif x < 0 and y > 0:
+#     cuoter = 2
+# elif x < 0 and y < 0:
+#     cuoter = 3
+# elif x > 0 and y < 0:
+#     cuoter = 4
+# print('точка в четверти', cuoter)
+# #-------------------------------------------------
