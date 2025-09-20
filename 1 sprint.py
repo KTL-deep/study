@@ -38,3 +38,10 @@
 #     cuoter = 4
 # print('точка в четверти', cuoter)
 # #-------------------------------------------------
+# status_string = 'ВСЁ ИДЁТ ПО ПЛАНУ'
+# print(status_string.lower())
+# print(status_string.upper())
+# print(status_string.capitalize())
+# print(status_string.title())
+# print(status_string.swapcase())
+# #-------------------------------------------------
