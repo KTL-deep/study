@@ -137,10 +137,74 @@
 # uniq_movies = set(movies)
 # print(uniq_movies)
 # #-------------------------------------------------
-not_uniq_str = 'съешь же ещё этих мягких французских булок да выпей чаю'
-replaced = not_uniq_str.replace(' ', '')
-count = len(set(replaced))
-print(count)
+# not_uniq_str = 'съешь же ещё этих мягких французских булок да выпей чаю'
+# replaced = not_uniq_str.replace(' ', '')
+# count = len(set(replaced))
+# print(count)
+# #-------------------------------------------------
+# package = ['2:00:01', 15000]
+# package = tuple(package)
+# print(package)
+# print(type(package))
 #-------------------------------------------------
+# movie_info = {'Матрица': 4.5, 'Трон': 4.8}
+# movie_names = set(movie_info)
+# print(movie_names)
+#-------------------------------------------------
+# import time
+#
+# # Создается множество
+# num_set = set()
+# # С помощью цикла множество заполняется элементами от 0 до 999999
+# for num in range(10**6):
+#     num_set.add(num)
+#
+# # В start_time сохраняем время в секундах перед началом поиска
+# start_time = time.time()
+# if 954365 in num_set:
+#     print(True)
+#
+# # Выводим в терминал время, затраченное на поиск нужного элемента:
+# print((time.time() - start_time))
+#
+# # Создаём и наполняем список:
+# num_list = []
+# for num in range(10**6):
+#     num_list.append(num)
+#
+# start_time = time.time()
+# if 954365 in num_list:
+#     print(True)
+# print((time.time() - start_time))
+#-------------------------------------------------
+# maxim_toys = {'машинка', 'скакалка', 'кубики', 'пистолетик'}
+# lera_toys = {'скакалка', 'кукла', 'кубики', 'юла'}
+#
+# # Создаём множество, элементы которого есть в первом И (&) во втором множестве:
+# overlap = maxim_toys & lera_toys
+# print(overlap)
+# # Вывод в терминал: {'кубики', 'скакалка'}
+# unite = maxim_toys | lera_toys
+# print(unite)
+# diff = maxim_toys - lera_toys
+# print(diff)
+# sym_diff = maxim_toys ^ lera_toys
+# print(sym_diff)
+#-------------------------------------------------
+# num_string_1 = '100 13 2 143 12 3 55 4 64 18 56'
+# num_string_2 = '234 2 56 432 3 100 12 99 43 18 31 64'
+#
+# union = set(num_string_1.split()) & set(num_string_2.split())
+# print(union)
+# print(len(union))
+#-------------------------------------------------
+# Исходная строка с ID
+id_string = '32 48 2 6 14 58 2 88 9 14 123 48 3 17 42 42 7'
 
+id_list = id_string.split()
+unique_ids = {int(i) for i in id_list}
+unique_ids_list = list(unique_ids)
+sort_ids = unique_ids_list.sort()
 
+print(unique_ids_list)
+print(sort_ids)
