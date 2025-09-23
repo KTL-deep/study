@@ -199,12 +199,28 @@
 # print(len(union))
 #-------------------------------------------------
 # Исходная строка с ID
-id_string = '32 48 2 6 14 58 2 88 9 14 123 48 3 17 42 42 7'
+# id_string = '32 48 2 6 14 58 2 88 9 14 123 48 3 17 42 42 7'
+#
+# id_list = id_string.split()
+# unique_ids = {int(i) for i in id_list}
+# unique_ids_list = list(unique_ids)
+# sort_ids = unique_ids_list.sort()
+#
+# print(unique_ids_list)
+# print(sort_ids)
+#-------------------------------------------------
+import datetime as dt
+from pickle import PROTO
 
-id_list = id_string.split()
-unique_ids = {int(i) for i in id_list}
-unique_ids_list = list(unique_ids)
-sort_ids = unique_ids_list.sort()
+lera_birthday = dt.date(day=16, month=5, year=2015)
+maxim_birthday = dt.date(day=16, month=12, year=2011)
 
-print(unique_ids_list)
-print(sort_ids)
+today = dt.date.today()
+today_year = today.year
+print(today_year)
+lera_birthday = dt.date(2025, 5, 16)
+maxim_birthday = dt.date(today_year, 12, 16)
+
+print(lera_birthday - today_year)
+print(maxim_birthday - today_year)
+
