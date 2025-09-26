@@ -209,18 +209,58 @@
 # print(unique_ids_list)
 # print(sort_ids)
 #-------------------------------------------------
+# import datetime as dt
+#
+# lera_birthday = dt.date(2015, 5, 16)
+# maxim_birthday = dt.date(2011, 12, 16)
+#
+# def get_days_to_birthday(date_birthday):
+#     today = dt.date.today()
+#     today_year = today.year
+#     new_date_birthday = date_birthday.replace(year=today_year)
+#     if new_date_birthday < today:
+#         date = new_date_birthday.replace(year=today_year + 1) - today
+#     else:
+#         date = date_birthday.replace(year=today_year) - today
+#     return date.days
+#
+# lera_days_left = get_days_to_birthday(lera_birthday)
+# maxim_days_left = get_days_to_birthday(maxim_birthday)
+#
+# print(lera_days_left)
+# print(maxim_days_left)
+#-------------------------------------------------
 import datetime as dt
-from pickle import PROTO
 
-lera_birthday = dt.date(day=16, month=5, year=2015)
-maxim_birthday = dt.date(day=16, month=12, year=2011)
+# В эту переменную запишите формат для
+# преобразования даты
+FORMAT =
 
-today = dt.date.today()
-today_year = today.year
-print(today_year)
-lera_birthday = dt.date(2025, 5, 16)
-maxim_birthday = dt.date(today_year, 12, 16)
 
-print(lera_birthday - today_year)
-print(maxim_birthday - today_year)
+# Добавьте в объявление функции ещё один параметр - имя
+def get_days_to_birthday(name, date_birthday):
+    # Преобразуйте полученную строку с датой в объект нужного типа
+    date_birthday = None
+    name = None
 
+    today = dt.date.today()
+    date_birthday = date_birthday.replace(year=today.year)
+
+    if date_birthday < today:
+        date_birthday = date_birthday.replace(year=today.year + 1)
+
+    days_to_birthday = date_birthday - dt.date.today()
+    return days_to_birthday
+
+
+birthdays = [
+    ('Лера', '16.05.2015'),
+    ('Максим', '16.12.2011'),
+    ('Толя', '12.06.2016')
+]
+
+
+
+# Напечатайте результат вызова функции get_days_to_birthday()
+# для каждой пары из списка birthdays
+print(get_days_to_birthday(..., ...))
