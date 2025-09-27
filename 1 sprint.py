@@ -230,37 +230,80 @@
 # print(lera_days_left)
 # print(maxim_days_left)
 #-------------------------------------------------
+# import datetime as dt
+#
+#
+#
+# # В эту переменную запишите формат для
+# # преобразования даты
+# FORMAT = '%d.%m.%Y'
+#
+#
+# # Добавьте в объявление функции ещё один параметр - имя
+# def get_days_to_birthday(name, date_birthday):
+#     # Преобразуйте полученную строку с датой в объект нужного типа
+#     date_birthday = dt.datetime.strptime(date_birthday, FORMAT).date()
+#
+#     today = dt.date.today()
+#
+#     birthday_ths_year = date_birthday.replace(year=today.year)
+#
+#     if date_birthday < today:
+#         date_birthday = date_birthday.replace(year=today.year + 1)
+#
+#     days_left = date_birthday - today
+#     return f'{name}, до твоего дня рождения осталось дней: {days_left.days}'
+#
+# birthdays = [
+#     ('Лера', '16.05.2015'),
+#     ('Максим', '16.12.2011'),
+#     ('Толя', '12.06.2016')
+# ]
+#
+#
+# for person_name, person_birthday in birthdays:
+#     result = get_days_to_birthday(person_name, person_birthday)
+#     print(result)
+#-------------------------------------------------------------------------
+# Импортируйте необходимые модули
+
 import datetime as dt
 
+FORMAT = '%H:%M:%S' # Запишите формат полученного времени.
+WEIGHT = 75  # Вес.
+HEIGHT = 175  # Рост.
+K_1 = 0.035  # Коэффициент для подсчета калорий.
+K_2 = 0.029  # Коэффициент для подсчета калорий.
+STEP_M = 0.65  # Длина шага в метрах.
+
+storage_data = {}  # Словарь для хранения полученных данных.
 
 
-# В эту переменную запишите формат для
-# преобразования даты
-FORMAT = '%d.%m.%Y'
+def check_correct_data(data):
+    """Проверка корректности полученного пакета."""
+    if len(data) !=2 or not data[0] or not data[1]:
+        return False
+    return True
 
 
-# Добавьте в объявление функции ещё один параметр - имя
-def get_days_to_birthday(name, date_birthday):
-    # Преобразуйте полученную строку с датой в объект нужного типа
-    date_birthday = dt.datetime.strptime(date_birthday, FORMAT).date()
-
-    today = dt.date.today()
-
-    birthday_ths_year = date_birthday.replace(year=today.year)
-
-    if date_birthday < today:
-        date_birthday = date_birthday.replace(year=today.year + 1)
-
-    days_left = date_birthday - today
-    return f'{name}, до твоего дня рождения осталось дней: {days_left.days}'
-
-birthdays = [
-    ('Лера', '16.05.2015'),
-    ('Максим', '16.12.2011'),
-    ('Толя', '12.06.2016')
-]
+def check_correct_time(time):
+    """Проверка корректности параметра времени."""
+    if storage_data and time <= max(storage_data.keys()):
+        return False
+    return True
 
 
-for person_name, person_birthday in birthdays:
-    result = get_days_to_birthday(person_name, person_birthday)
-    print(result)
+def get_step_day(steps):
+    """Получить количество пройденных шагов за этот день."""
+    return sum(storage_data.values()) + steps
+
+
+def get_distance(steps):
+    """Получить дистанцию пройденного пути в км."""
+    return steps * STEP_M / 1000
+
+
+def get_spent_calories(dist, current_time):
+    """Получить значения потраченных калорий."""
+
+    # В уроке «Последовательности» вы написали формулу расчета калорий.
