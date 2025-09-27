@@ -232,11 +232,7 @@
 #-------------------------------------------------
 import datetime as dt
 
-birthdays = [
-    ('Лера', '16.05.2015'),
-    ('Максим', '16.12.2011'),
-    ('Толя', '12.06.2016')
-]
+
 
 # В эту переменную запишите формат для
 # преобразования даты
@@ -246,23 +242,25 @@ FORMAT = '%d.%m.%Y'
 # Добавьте в объявление функции ещё один параметр - имя
 def get_days_to_birthday(name, date_birthday):
     # Преобразуйте полученную строку с датой в объект нужного типа
-    date_birthday = None
-    name = None
+    date_birthday = dt.datetime.strptime(date_birthday, FORMAT).date()
 
     today = dt.date.today()
-    date_birthday = date_birthday.replace(year=today.year)
+
+    birthday_ths_year = date_birthday.replace(year=today.year)
 
     if date_birthday < today:
         date_birthday = date_birthday.replace(year=today.year + 1)
 
-    days_to_birthday = date_birthday - dt.date.today()
-    return days_to_birthday
+    days_left = date_birthday - today
+    return f'{name}, до твоего дня рождения осталось дней: {days_left.days}'
+
+birthdays = [
+    ('Лера', '16.05.2015'),
+    ('Максим', '16.12.2011'),
+    ('Толя', '12.06.2016')
+]
 
 
-
-
-
-
-# Напечатайте результат вызова функции get_days_to_birthday()
-# для каждой пары из списка birthdays
-print(get_days_to_birthday(..., ...))
+for person_name, person_birthday in birthdays:
+    result = get_days_to_birthday(person_name, person_birthday)
+    print(result)
