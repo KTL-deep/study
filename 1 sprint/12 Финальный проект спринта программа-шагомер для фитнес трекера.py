@@ -76,6 +76,7 @@ data_packages = [
 for package in data_packages:
     accept_package(package)
 
+
 total_time = get_time(storage_data)
 total_steps = get_step_day()
 total_distance = get_distance(total_steps)
